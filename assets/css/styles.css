@@ -500,6 +500,12 @@ a { color: inherit; }
   border-radius: 20px;
   padding: 32px;
   box-shadow: 0 10px 30px rgba(90, 70, 130, 0.08);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.plan:hover {
+  transform: translateY(-6px);
+  border-color: rgba(97, 44, 181, 0.32);
+  box-shadow: 0 22px 44px rgba(90, 70, 130, 0.16);
 }
 .plan.featured {
   position: relative;
@@ -507,6 +513,19 @@ a { color: inherit; }
   background: var(--dark);
   border-color: var(--dark);
   box-shadow: 0 24px 50px rgba(35, 35, 30, 0.28);
+}
+.plan.featured:hover {
+  transform: translateY(-6px);
+  border-color: var(--dark);
+  box-shadow: 0 32px 60px rgba(35, 35, 30, 0.38);
+}
+@media (prefers-reduced-motion: reduce) {
+  .plan,
+  .plan:hover,
+  .plan.featured:hover {
+    transition: none;
+    transform: none;
+  }
 }
 .plan .ribbon {
   position: absolute;
